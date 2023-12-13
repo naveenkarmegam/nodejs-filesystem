@@ -31,11 +31,11 @@ app.get("/static", (req, res) => {
   }
 
   // a)content of the file should be the current timestamp.
-  const time = new Date().toUTCString();
+  const time = new Date().toLocaleString('en-US', { timeZone: 'Asia/Kolkata' });
   // b)The filename should be current date-time.txt
   writeFileSync(
-    path.join(__dirname, fileFolder, "/date-time.txt"),
-    `Last created timestamp ${time}`,
+    path.join(__dirname, fileFolder, "/date-time.txt"), 
+    `Last created timestamp format is MM/DD/YY ${time}`,
     (err) => {
       if (err) {
         console.log(err);
