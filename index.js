@@ -10,9 +10,16 @@ const fileFolder = "timestamps";
 app.get("/", function (req, res) {
   if (req.url === "/") {
     res.send(`
-    <h3>Hey, this is naveen!! welcome to my server </h3>
-    <p><a href="/static">Click here</a> to create a timestamp</p>
-    <p><a href="/textfiles">Click here</a>API endpoint to retrieve text files</p>
+    <h2 style="text-align:center;color:blue;">Hey, this is naveen!! welcome to my server </h2>
+    <div style="display:flex; justify-content:center;padding:20px;"> 
+    <div style=" background-color:blue; padding:20px;"> 
+    <p style="color:white;background-color:white; padding:10px 40px; margin:10px 20px; text-align:center ">
+      <a href="/static" style="text-decoration:none;color:black;">Get TimeStamp</a>
+    </p>
+    <p style="color:white;background-color:white; padding:10px 5px; margin:10px 20px; text-align:center ">
+    <a href="/textfiles"  style="text-decoration:none;color:black;">Get Retrive Files</a></p>
+    </div>
+    </div>
     `);
   } else {
     res.status(404).end(`
